@@ -1,7 +1,7 @@
 app:
     name: Postgres Slave
     code: POSTGRES2
-    notify: appzdev@cloudbourne.co
+    notify: aborra@ecloudbourne.com
     
 build:
     version: 13.x
@@ -36,5 +36,4 @@ properties:
       vault: PGPASSWORD 
     POSTGRESQL_MASTER_HOST: postgres13-master-13-x
     POSTGRESQL_MASTER_PORT: 5432    
-    revision : 16
-    
+    revision : 17
