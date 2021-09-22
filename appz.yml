@@ -38,4 +38,4 @@ properties:
       vault: PGPASSWORD 
     POSTGRESQL_MASTER_HOST: postgres-sonarqube-13-3
     POSTGRESQL_MASTER_PORT: 5432    
-    revision : 22
+    revision : 23
