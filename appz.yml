@@ -1,10 +1,10 @@
 app:
-    name: Postgres Slave
-    code: POSTGRES2
+    name: Postgres Sonar Slave
+    code: POSTGRESONARSLAVE
     notify: aborra@ecloudbourne.com
     
 build:
-    version: 13.x
+    version: 13.3
     env: DEV
     build_file: none
     output_files: output/*.zip
@@ -18,11 +18,15 @@ deploy:
     - 5432
     
 volumes:
-  - claim: postgres-slave-data
+  - claim: postgresonar-slave-data
     mount: /appz/data
     name: data
-    size: 10Gi
-    mode: ReadWriteOnce   
+    size: 5Gi
+  - claim: postgresonar-slave-data
+    mount: /appz/backup
+    name: data
+    size: 5Gi
+      
     
     
 properties:
@@ -34,6 +38,6 @@ properties:
     POSTGRESQL_REP_USER: replica    
     PGPASSWORD: 
       vault: PGPASSWORD 
-    POSTGRESQL_MASTER_HOST: postgres13-master-13-x
+    POSTGRESQL_MASTER_HOST: postgres-sonarqube-13-3
     POSTGRESQL_MASTER_PORT: 5432    
     revision : 22
