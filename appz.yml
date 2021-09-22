@@ -25,10 +25,8 @@ volumes:
   - claim: postgresonar-slave-data
     mount: /appz/backup
     name: data
-    size: 5Gi
-      
-    
-    
+    size: 5Gi  
+        
 properties:
     POSTGRESQL_REPLICATION_MODE: slave
     POSTGRESQL_DATA: /appz/data
